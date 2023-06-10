@@ -27,9 +27,9 @@ const handleRegister = (req, res, knex, bcrypt) => {
             .then(trx.commit)
             .catch(trx.rollback)
     })
-        .catch(error => {
-            res.status(500).json('Error registering user');
-        })
+    .catch(error => {
+        res.status(500).json('Error registering user');
+    })
 }
 
 module.exports = {
