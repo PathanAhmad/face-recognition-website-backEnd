@@ -5,11 +5,13 @@ const app = express();
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host: 'dpg-ci1qu767avj2t31ddqhg-a',
+    connectionString : process.env.DATABASE_URL,
+    ssl : { rejectUnauthorised: false },
+    host: process.env.DATABASE_HOST,
     port: 5432,
-    user: 'face_recognition_site_database_user',
-    password: '7vdFfiPbWMc7Fk6yACUXryBL2v6Mswxv',
-    database: 'face_recognition_site_database'
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PW,
+    database: process.env.DATABASE_DB
   }
 });
 
