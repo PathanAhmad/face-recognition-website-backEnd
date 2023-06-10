@@ -1,4 +1,6 @@
 
+const fetch = require('isomorphic-fetch');
+
 const handleImage = (req, res, knex) => {
     const { id } = req.body;
     console.log(id)
