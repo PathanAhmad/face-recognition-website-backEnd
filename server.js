@@ -5,13 +5,11 @@ const app = express();
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    connectionString: process.env.DATABAS_URL,
-    ssl: {rejectUnauthorised: false},
-    host: process.env.DATABASE_HOST,
+    host: 'dpg-ci1qu767avj2t31ddqhg-a',
     port: 5432,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PW,
-    database: process.env.DATABASE_DB
+    user: 'face_recognition_site_database_user',
+    password: '7vdFfiPbWMc7Fk6yACUXryBL2v6Mswxv',
+    database: 'face_recognition_site_database'
   }
 });
 
@@ -43,7 +41,7 @@ app.post('/register', (req, res) => { register.handleRegister(req, res, knex, bc
 
 app.put('/image', (req, res) => { image.handleImage(req, res, knex) })
 
-app.post('/imageurl', (req, res) => { image.handleAPICall(req, res, knex) })
+app.put('/image', (req, res) => { image.handleAPICall(req, res) })
 
 app.listen(3000, () => {
   console.log("Seems to be working just fine!");
