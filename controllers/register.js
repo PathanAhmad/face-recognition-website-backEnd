@@ -16,7 +16,7 @@ const handleRegister = (req, res, knex, bcrypt) => {
                 return trx('users')
                     .returning('*')
                     .insert({
-                        email: loginEmail[0],
+                        email: loginEmail[0],   //Made a change. Removed .email from here
                         name: name,
                         joined: new Date()
                     })
