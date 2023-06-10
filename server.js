@@ -45,7 +45,9 @@ app.put('/image', (req, res) => { image.handleImage(req, res, knex) })
 
 app.post('/imageurl', (req, res) => { image.handleAPICall(req, res) })
 
-// app.listen(3000, () => {
-//   console.log("Seems to be working just fine!");
-// })
+const port = process.env.PORT
+
+app.listen(port, () => {
+  console.log("Seems to be working just fine!");
+})
 
