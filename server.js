@@ -43,7 +43,7 @@ app.post('/register', (req, res) => { register.handleRegister(req, res, knex, bc
 
 app.put('/image', (req, res) => { image.handleImage(req, res, knex) })
 
-app.put('/imageurl', (req, res) => { image.handleAPICall(req, res) })
+app.post('/imageurl', (req, res) => { image.handleAPICall(req, res) })
 
 app.listen(3000, () => {
   console.log("Seems to be working just fine!");
