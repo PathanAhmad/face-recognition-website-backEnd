@@ -43,10 +43,13 @@ const handleAPICall = (req, res) => {
     };
     fetch(`https://api.clarifai.com/v2/models/face-detection/versions/6dc7e46bc9124c5c8824be4822abe105/outputs`, requestOptions)
         .then(response => {
+            console.log(response.status); // Check the response status code
+            console.log(response.headers.get('Content-Type'));
             console.log(response);
-            response.json()
+            return response.text()
         })
         .then(data => {
+            console.log(data)
             res.json(data)
         })
         .catch(error => {
